@@ -5,7 +5,9 @@
  */
 package nanogridapp;
 
+import nanogridgame.GridSolution;
 import nanogridgame.NanoGridGame;
+import nanogridgame.NanoGridParameters;
 
 /**
  *
@@ -17,9 +19,17 @@ public class NanoGridApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       NanoGridAppHost host = new NanoGridAppHost();
-       host.CreateGame(5,10);
-       host.displayGame();
+        //NanoGridParameters p = new NanoGridParameters();
+        //NanoGridGame game = new NanoGridGame(p);
+        
+        GridSolution grid = new GridSolution();
+        int[] cnts = new int[2];
+        cnts[0] =2;
+        cnts[1] =3;
+        int sz =10;
+        grid.createSolutions(cnts, sz);
+        System.out.printf("%d\n", grid.getSolutionCount());
+        grid.printSolutions((System.out));
     }
     
 }
